@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="main-content">
+    <header class="container header active" id="home">
+        <div class="header-content">
+            <div class="left-header">
+                <div class="h-shape"></div>
+                    <div class="image">
+        <img src="" id="image" alt="Portfolio Image">
+    </div>
+
+            </div>
+            <div class="right-header">
+                <h1 class="name">
+                    Hi, I'm <span id="fullNameSpan"></span>
+                </h1>
+                <h1 id="skillsSpan"></h1>
+               
+                
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="container about" id="about">
+            <div class="main-title">
+                <h2>About <span>me</span><span class="bg-text"></span></h2>
+            </div>
+            <br><br>
+            
+                <div class="left-about">
+                    <h3>Information About me</h3>
+                    <br>
+                    <p>
+                        <span id="bioSpan"></span>
+                    </p>
+                    <br>
+                    <!-- <div class="btn-con">
+                        <a href="" class="main-btn" id="downloadBtn">
+                            <span class="btn-text">Download CV</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                          </a>
+                          
+                    </div> -->
+                </div>        
+        </section>
+        
+        <section class="container contact" id="contact">
+            <div class="contact-container">
+                <div class="main-title">
+                    <h2>Contact <span>Me</span><span class="bg-text"></span></h2>
+                </div>
+                <div class="contact-content-con">
+                    <div class="left-contact">
+                        <h4>Contact me here</h4>
+                        <p>
+                            <span id="specialSpan"></span>
+                        </p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>location:</span>
+                                </div>
+                                <p>
+                                    <span id="locationSpan"></span>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email:</span>
+                                </div>
+                                <p>
+                                    <span id="emailSpan"></span>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Education:</span>
+                                </div>
+                                <p>
+                                    <span id="educationSpan"></span>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-address-book"></i>
+                                    <span>Mobile Number:</span>
+                                </div>
+                                <p>
+                                    <span id="contactSpan"></span>
+                                </p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-globe-africa"></i>
+                                    <span>Languages:</span>
+                                </div>
+                                <p>
+                                    <span id="languagesSpan"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-icons">
+                            <div class="contact-icon">
+                                <a href="#" id="facebookIcon" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" id="twitterIcon" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" id="githubIcon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" id="instagramIcon" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="controls">
+        <div class="control active-btn" data-id="home" >
+            <i class="fas fa-home"></i>
+        </div>
+        <div class="control" data-id="about">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="
+        control" data-id="contact">
+        <i class="fas fa-envelope-open"></i>
+    </div>
+</div>
+<div class="theme-btn">
+    <i class="fas fa-adjust"></i>
+</div>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.10.0/jspdf.umd.min.js" integrity="sha512-oy7RoT+7QvnXdWRt+gIyRR4SWe8r99onmftFq/BEJfd6A0UE4bQvr6XQgYVrAwZefV/4C7zCZAGbTTcYP/m+jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+var data = window.location.search;
+        var params = new URLSearchParams(data);
+
+    var fullName = params.get("fullName");
+    var email = params.get("email");
+    var skills = params.get("skills");
+    var bio = params.get("bio");
+    var education = params.get("education");
+    var contact = params.get("contact");
+    var userlocation = params.get("location");
+    var languages = params.get("languages");
+    var facebookURL = params.get("facebook");
+    var twitterURL = params.get("twitter");
+    var githubURL = params.get("github");
+    var instagramURL = params.get("instagram");
+    var specialtxt = params.get("special");
+    var image = params.get("image");
+   
+    var imageElement = document.getElementById("image");
+
+    document.getElementById("fullNameSpan").innerHTML = fullName;
+    document.getElementById("skillsSpan").innerHTML = skills;
+    document.getElementById("emailSpan").innerHTML = email;
+    document.getElementById("bioSpan").innerHTML = bio;
+    document.getElementById("educationSpan").innerHTML = education;
+    document.getElementById("contactSpan").innerHTML = contact;
+    document.getElementById("locationSpan").innerHTML = userlocation;
+    document.getElementById("languagesSpan").innerHTML = languages;
+    document.getElementById("specialSpan").innerHTML = specialtxt;
+    var linkElement = document.createElement("a");
+    var userLocation = params.get("location");
+
+    // Update the href attributes of the social media icon links
+    var facebookIconLink = document.getElementById("facebookIcon");
+    facebookIconLink.href = "https://" + facebookURL;
+
+    var twitterIconLink = document.getElementById("twitterIcon");
+    twitterIconLink.href = "https://" + twitterURL;
+
+    var githubIconLink = document.getElementById("githubIcon");
+    githubIconLink.href = "https://" + githubURL;
+
+    var instagramIconLink = document.getElementById("instagramIcon");
+    instagramIconLink.href = "https://" + instagramURL;
+
+ // Get the image URL from the URL parameters
+ var params = new URLSearchParams(window.location.search);
+        var imageURL = params.get("imageURL");
+        imageElement.src = imageURL;
+  
+    // Set image source
+    if (image) {
+      imageElement.src = image;
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
